@@ -2238,18 +2238,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'da': 'Please accepts that Manu APP can save files for offline use',
       'kl': '',
     },
-    '1pu27mkt': {
-      'da': '',
-      'kl': '',
-    },
-    '00jxyg41': {
-      'da': '',
-      'kl': '',
-    },
-    'n7ykx96g': {
-      'da': '',
-      'kl': '',
-    },
     'jetruzmb': {
       'da': '',
       'kl': '',
