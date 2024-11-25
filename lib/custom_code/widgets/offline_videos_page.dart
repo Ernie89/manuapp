@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'dart:io';
-import 'package:pod_player/pod_player.dart';
 import 'package:hive/hive.dart';
+import 'package:pod_player/pod_player.dart';
 
 class OfflineVideosPage extends StatefulWidget {
   final double? width;
@@ -35,8 +35,7 @@ class _OfflineVideosPageState extends State<OfflineVideosPage> {
   Future<void> loadVideos() async {
     try {
       videosBox = await Hive.openBox<String>('videos');
-      print(
-          'Loaded videos from Hive: ${videosBox.values.toList()}'); // Debugging log
+      print('Videos loaded from Hive: ${videosBox.values.toList()}');
     } catch (e) {
       print('Error loading videos from Hive: $e');
     }

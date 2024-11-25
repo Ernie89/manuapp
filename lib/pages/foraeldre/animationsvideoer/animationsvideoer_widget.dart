@@ -153,22 +153,31 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'kl1qsc00' /* Forældre */,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('Forealdre');
+                                    },
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'kl1qsc00' /* Forældre */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey('Readex Pro'),
+                                          ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          fontSize: 16.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey('Readex Pro'),
-                                        ),
                                   ),
                                 ),
                               ),
@@ -271,7 +280,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -359,50 +368,6 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    await actions.testPermissionHandler(
-                                      context,
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'jnkqdj6y' /* Hent Video */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 195.0,
-                                    height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF9DCFC2),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -430,7 +395,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -545,7 +510,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -660,7 +625,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -794,7 +759,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -909,7 +874,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1043,7 +1008,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1158,7 +1123,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1273,7 +1238,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1388,7 +1353,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1503,7 +1468,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1637,7 +1602,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1752,7 +1717,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1886,7 +1851,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -2001,7 +1966,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -2116,7 +2081,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -2231,7 +2196,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -2365,7 +2330,7 @@ class _AnimationsvideoerWidgetState extends State<AnimationsvideoerWidget> {
                               showControls: true,
                               allowFullScreen: true,
                               allowPlaybackSpeedMenu: false,
-                              lazyLoad: false,
+                              lazyLoad: true,
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(

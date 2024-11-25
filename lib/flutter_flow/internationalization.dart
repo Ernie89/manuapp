@@ -910,10 +910,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'da': 'Hent Video',
       'kl': 'ATUARUK',
     },
-    'jnkqdj6y': {
-      'da': 'Hent Video',
-      'kl': 'ATUARUK',
-    },
     'n231wjl1': {
       'da': 'MANU',
       'kl': '',
@@ -2238,31 +2234,48 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'da': 'Please accepts that Manu APP can save files for offline use',
       'kl': '',
     },
-    'zu2izc8a': {
-      'da': 'Vi har brug for adgang til dit filbibliotek for at gemme videoer.',
+    '0g7xs759': {
+      'da': 'Please accepts that Manu APP can save files for offline use',
       'kl': '',
     },
-    '7jejx6vl': {
-      'da':
-          'Vi har brug for adgang til dit filbibliotek for at indlæse videoer.',
+    '1pu27mkt': {
+      'da': '',
       'kl': '',
     },
-    'th2u6q74': {
-      'da':
-          'Vi har brug for adgang til dit fotobibliotek for at gemme videoer.',
+    '00jxyg41': {
+      'da': '',
       'kl': '',
     },
-    'dsprnsnw': {
-      'da':
-          'Vi har brug for adgang til dit fotobibliotek for at gemme videoer.',
+    'n7ykx96g': {
+      'da': '',
       'kl': '',
     },
-    '9njkeqyc': {
-      'da': 'Vi har brug for filadgang for at gemme downloadede videoer.',
+    'jetruzmb': {
+      'da': '',
       'kl': '',
     },
-    'ezmrjsq7': {
-      'da': 'Vi har brug for adgang til dit filbibliotek for at gemme videoer.',
+    'p3bufnuf': {
+      'da': '',
+      'kl': '',
+    },
+    'v1in1dz0': {
+      'da': '',
+      'kl': '',
+    },
+    '986oduar': {
+      'da': 'Allow Read Files',
+      'kl': '',
+    },
+    'uh3rjf2j': {
+      'da': 'Allow Read Files',
+      'kl': '',
+    },
+    'l3yay5ua': {
+      'da': 'Allow Read Files',
+      'kl': '',
+    },
+    'dsa2703s': {
+      'da': 'Allow Read Files',
       'kl': '',
     },
     'ykwclvyn': {

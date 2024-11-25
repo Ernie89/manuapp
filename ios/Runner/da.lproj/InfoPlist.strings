@@ -1,4 +1,6 @@
 NSLocationWhenInUseUsageDescription = "Please accepts that Manu APP can save files for offline use";
-NSPhotoLibraryUsageDescription = "Vi har brug for adgang til dit fotobibliotek for at gemme videoer.";
-NSPhotoLibraryAddUsageDescription = "Vi har brug for adgang til dit fotobibliotek for at gemme videoer.";
-NSFileProtectionComplete = "Vi har brug for filadgang for at gemme downloadede videoer.";
+NSPhotoLibraryUsageDescription = "Please accepts that Manu APP can save files for offline use";
+NSAllowsArbitraryLoads = "Allow Read Files";
+CADisableMinimumFrameDurationOnPhone = "Allow Read Files";
+UIApplicationSupportsIndirectInputEvents = "Allow Read Files";
+LSApplicationQueriesSchemes = "Allow Read Files";

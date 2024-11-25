@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'dart:io'; // For platform-specific checks
-import 'package:flutter/material.dart'; // For UI feedback (SnackBars)
+import 'package:flutter/material.dart'; // For user feedback (SnackBars)
 import 'package:permission_handler/permission_handler.dart'; // For runtime permissions
 import 'package:dio/dio.dart'; // For file downloading
 import 'package:path_provider/path_provider.dart'; // To get app directory paths
@@ -19,18 +19,18 @@ Future<void> videoOfflineUse(
   final dio = Dio(); // Create Dio instance for downloading files
 
   try {
-    // Request storage permission for Android and iOS
+    // Handle permissions for Android/iOS
     if (Platform.isAndroid || Platform.isIOS) {
       print('Requesting storage permission...'); // Debugging log
 
-      // Request permission
+      // Request storage permission
       PermissionStatus status = await Permission.storage.request();
 
-      // Handle different permission statuses
+      // Handle permission statuses
       if (status.isGranted) {
-        print('Permission granted.'); // Debugging log
+        print('Permission granted.');
       } else if (status.isDenied) {
-        print('Permission denied.'); // Debugging log
+        print('Permission denied.');
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
@@ -40,18 +40,18 @@ Future<void> videoOfflineUse(
         );
         return;
       } else if (status.isPermanentlyDenied) {
-        print('Permission permanently denied.'); // Debugging log
+        print('Permission permanently denied.');
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
-              'Storage permission permanently denied. Please enable it in app settings.',
+              'Storage permission permanently denied. Redirecting to app settings.',
             ),
           ),
         );
-        await openAppSettings(); // Open app settings to allow user to enable permissions
+        await openAppSettings(); // Redirect user to app settings
         return;
       } else if (status.isRestricted) {
-        print('Permission restricted (iOS-specific).'); // Debugging log
+        print('Permission restricted (iOS-specific).');
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
@@ -72,7 +72,7 @@ Future<void> videoOfflineUse(
     // Check if the file already exists
     final file = File(savePath);
     if (file.existsSync()) {
-      print('File already exists at: $savePath'); // Debugging log
+      print('File already exists at: $savePath');
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('File already exists.')),
       );
@@ -96,12 +96,12 @@ Future<void> videoOfflineUse(
       },
     );
 
-    print('File downloaded to: $savePath'); // Debugging log
+    print('File downloaded to: $savePath');
 
     // Save the file path to Hive for persistence
     final box = await Hive.openBox<String>('videos'); // Open the Hive box
     box.put(fileName, savePath); // Save the file path with its name
-    print('File path saved in Hive: $savePath'); // Debugging log
+    print('File path saved in Hive: $savePath');
 
     // Notify the user that the download is complete
     ScaffoldMessenger.of(context).showSnackBar(

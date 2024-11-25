@@ -62,11 +62,15 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
     <string>Please accepts that Manu APP can save files for offline use</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>Vi har brug for adgang til dit fotobibliotek for at gemme videoer.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Vi har brug for adgang til dit fotobibliotek for at gemme videoer.</string>
-	<key>NSFileProtectionComplete</key>
-    <string>Vi har brug for filadgang for at gemme downloadede videoer.</string>
+    <string>Please accepts that Manu APP can save files for offline use</string>
+	<key>NSAllowsArbitraryLoads</key>
+    <string>Allow Read Files</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+    <string>Allow Read Files</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+    <string>Allow Read Files</string>
+	<key>LSApplicationQueriesSchemes</key>
+    <string>Allow Read Files</string>
     <key>UIBackgroundModes</key>
     <array>
         <string>audio</string>
