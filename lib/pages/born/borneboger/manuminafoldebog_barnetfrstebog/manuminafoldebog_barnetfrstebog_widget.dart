@@ -1,12 +1,14 @@
+import '/backend/backend.dart';
 import '/components/bottom_navigation/bottom_navigation_widget.dart';
+import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_pdf_viewer.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'manuminafoldebog_barnetfrstebog_model.dart';
 export 'manuminafoldebog_barnetfrstebog_model.dart';
@@ -152,7 +154,7 @@ class _ManuminafoldebogBarnetfrstebogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '0sti2r6d' /* Børnebøger */,
+                                      '0sti2r6d' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +185,7 @@ class _ManuminafoldebogBarnetfrstebogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '0hhsofai' /* Manumina foldebog */,
+                                      '0hhsofai' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -265,14 +267,101 @@ Barnet før... */
                                                   .bodyMediumFamily),
                                     ),
                               ),
+                              StreamBuilder<List<AudioBooksRecord>>(
+                                stream: queryAudioBooksRecord(
+                                  queryBuilder: (audioBooksRecord) =>
+                                      audioBooksRecord.where(
+                                    'FileName',
+                                    isEqualTo: 'Barnets første bog',
+                                  ),
+                                  singleRecord: true,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return const Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: SpinKitDoubleBounce(
+                                          color: Color(0xFF9DCFC2),
+                                          size: 50.0,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<AudioBooksRecord>
+                                      audioPlayerAudioBooksRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final audioPlayerAudioBooksRecord =
+                                      audioPlayerAudioBooksRecordList.isNotEmpty
+                                          ? audioPlayerAudioBooksRecordList
+                                              .first
+                                          : null;
+
+                                  return FlutterFlowAudioPlayer(
+                                    audio: Audio.network(
+                                      'https://filesamples.com/samples/audio/mp3/sample3.mp3',
+                                      metas: Metas(
+                                        id: 'sample3.mp3-648a8e4a',
+                                        title: 'Title',
+                                      ),
+                                    ),
+                                    titleTextStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily),
+                                        ),
+                                    playbackDurationTextStyle: FlutterFlowTheme
+                                            .of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
+                                        ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    playbackButtonColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    activeTrackColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    inactiveTrackColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    elevation: 0.0,
+                                    playInBackground: PlayInBackground
+                                        .disabledRestoreOnForeground,
+                                  );
+                                },
+                              ),
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-0-9-maneder-Manumina-Billedbog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-0-9-maneder-Manumina-Billedbog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FMANU-0-9-maneder-Manumina-Billedbog.pdf?alt=media&token=6f830027-529a-4cd3-9cbb-d43f4fd09577',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'ztzwf6ac' /* Download PDF */,

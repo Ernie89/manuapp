@@ -1,11 +1,13 @@
+import '/backend/backend.dart';
 import '/components/bottom_navigation/bottom_navigation_widget.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:async';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'lydboger_model.dart';
 export 'lydboger_model.dart';
@@ -207,185 +209,201 @@ class _LydbogerWidgetState extends State<LydbogerWidget> {
                               ),
                         ),
                       ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Atualerpoq.mp3?alt=media&token=f30a0722-cffa-4d68-8ddc-0c5d7b2ad312',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Atualerpoq.mp3?alt=media&token=f30a0722-cffa-4d68-8ddc-0c5d7b2ad312-df5efe5d',
-                            title: 'Manumina Atualerpoq',
+                      StreamBuilder<List<AudioBooksRecord>>(
+                        stream: queryAudioBooksRecord(
+                          queryBuilder: (audioBooksRecord) =>
+                              audioBooksRecord.where(
+                            'Sprog',
+                            isEqualTo: 'GL',
                           ),
                         ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return const Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: SpinKitDoubleBounce(
+                                  color: Color(0xFF9DCFC2),
+                                  size: 50.0,
                                 ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Kuppiararpoq.mp3?alt=media&token=0097adb1-a8cd-4d67-9e7b-557962f9f3e7',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Kuppiararpoq.mp3?alt=media&token=0097adb1-a8cd-4d67-9e7b-557962f9f3e7-74bba87e',
-                            title: 'Manumina Kuppiararpoq',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
+                              ),
+                            );
+                          }
+                          List<AudioBooksRecord> listViewAudioBooksRecordList =
+                              snapshot.data!;
+
+                          return ListView.builder(
+                            padding: EdgeInsets.zero,
+                            primary: false,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: listViewAudioBooksRecordList.length,
+                            itemBuilder: (context, listViewIndex) {
+                              final listViewAudioBooksRecord =
+                                  listViewAudioBooksRecordList[listViewIndex];
+                              return Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 25.0, 0.0, 25.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            15.0, 0.0, 15.0, 0.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            listViewAudioBooksRecord.imageCover,
+                                            width: 275.0,
+                                            height: 275.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          35.0, 25.0, 35.0, 25.0),
+                                      child: FlutterFlowAudioPlayer(
+                                        audio: Audio.network(
+                                          listViewAudioBooksRecord.audioFile,
+                                          metas: Metas(
+                                            title: listViewAudioBooksRecord
+                                                .audiobookTitle,
+                                          ),
+                                        ),
+                                        titleTextStyle: FlutterFlowTheme.of(
+                                                context)
+                                            .titleLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleLargeFamily),
+                                            ),
+                                        playbackDurationTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily),
+                                                ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        playbackButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        activeTrackColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveTrackColor:
+                                            FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        elevation: 0.0,
+                                        playInBackground: PlayInBackground
+                                            .disabledRestoreOnForeground,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await downloadFile(
+                                              filename: listViewAudioBooksRecord
+                                                  .fileName,
+                                              url: listViewAudioBooksRecord
+                                                  .downloadURL,
+                                            );
+
+                                            await DowloadedFilesRecord
+                                                .collection
+                                                .doc(formatNumber(
+                                                  listViewIndex,
+                                                  formatType:
+                                                      FormatType.decimal,
+                                                  decimalType:
+                                                      DecimalType.commaDecimal,
+                                                ))
+                                                .set(
+                                                    createDowloadedFilesRecordData(
+                                                  fileName:
+                                                      listViewAudioBooksRecord
+                                                          .audiobookTitle,
+                                                  fileType: 'mp3',
+                                                  soundFile:
+                                                      listViewAudioBooksRecord
+                                                          .audioFile,
+                                                ));
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '7yb5r9yl' /* Hent lydbog */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 190.0,
+                                            height: 40.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Pinnguarpoq.mp3?alt=media&token=fd58cfe7-161d-4501-92fd-4ce66019ff78',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Pinnguarpoq.mp3?alt=media&token=fd58cfe7-161d-4501-92fd-4ce66019ff78-ff5e26aa',
-                            title: 'Manumina Pinnguarpoq',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Timaa.mp3?alt=media&token=d38bb210-d1e6-4196-88a7-30c6d2f74151',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Timaa.mp3?alt=media&token=d38bb210-d1e6-4196-88a7-30c6d2f74151-66577128',
-                            title: 'Manumina Timaa',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FMeeqqavit%20Atuagaataa%20siulleq.mp3?alt=media&token=a53311d0-9961-4e10-ac18-27575de5fee0',
-                          metas: Metas(
-                            id: 'Lydfiler%2FMeeqqavit%20Atuagaataa%20siulleq.mp3?alt=media&token=a53311d0-9961-4e10-ac18-27575de5fee0-17874d08',
-                            title: 'Meeqqavit Atuagaataa Siulleq',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
+                              );
+                            },
+                          );
+                        },
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -407,185 +425,181 @@ class _LydbogerWidgetState extends State<LydbogerWidget> {
                               ),
                         ),
                       ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Starter%20i%20Skole.mp3?alt=media&token=eab8399b-3038-45bb-be57-c61ae8eee2f1',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Starter%20i%20Skole.mp3?alt=media&token=eab8399b-3038-45bb-be57-c61ae8eee2f1-6ddedf91',
-                            title: 'Manumina Starter i Skole',
+                      StreamBuilder<List<AudioBooksRecord>>(
+                        stream: queryAudioBooksRecord(
+                          queryBuilder: (audioBooksRecord) =>
+                              audioBooksRecord.where(
+                            'Sprog',
+                            isEqualTo: 'DK',
                           ),
                         ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return const Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: SpinKitDoubleBounce(
+                                  color: Color(0xFF9DCFC2),
+                                  size: 50.0,
                                 ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Har%20Skoldkopper.mp3?alt=media&token=cf70e62a-425a-4164-86a4-00e8bd9bae36',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Har%20Skoldkopper.mp3?alt=media&token=cf70e62a-425a-4164-86a4-00e8bd9bae36-7981cfcc',
-                            title: 'Manumina Har Skoldkopper',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
+                              ),
+                            );
+                          }
+                          List<AudioBooksRecord> listViewAudioBooksRecordList =
+                              snapshot.data!;
+
+                          return ListView.builder(
+                            padding: EdgeInsets.zero,
+                            primary: false,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: listViewAudioBooksRecordList.length,
+                            itemBuilder: (context, listViewIndex) {
+                              final listViewAudioBooksRecord =
+                                  listViewAudioBooksRecordList[listViewIndex];
+                              return Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 25.0, 0.0, 25.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            15.0, 0.0, 15.0, 0.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            listViewAudioBooksRecord.imageCover,
+                                            width: 275.0,
+                                            height: 275.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 25.0, 0.0, 25.0),
+                                      child: FlutterFlowAudioPlayer(
+                                        audio: Audio.network(
+                                          listViewAudioBooksRecord.audioFile,
+                                          metas: Metas(
+                                            title: listViewAudioBooksRecord
+                                                .audiobookTitle,
+                                          ),
+                                        ),
+                                        titleTextStyle: FlutterFlowTheme.of(
+                                                context)
+                                            .titleLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleLargeFamily),
+                                            ),
+                                        playbackDurationTextStyle:
+                                            FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily),
+                                                ),
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        playbackButtonColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        activeTrackColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveTrackColor:
+                                            FlutterFlowTheme.of(context)
+                                                .alternate,
+                                        elevation: 0.0,
+                                        playInBackground: PlayInBackground
+                                            .disabledRestoreOnForeground,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await downloadFile(
+                                              filename: listViewAudioBooksRecord
+                                                  .fileName,
+                                              url: listViewAudioBooksRecord
+                                                  .downloadURL,
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '5u8id5h3' /* Hent lydbog */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 190.0,
+                                            height: 40.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManumina%20Leger.mp3?alt=media&token=d30a78fd-783f-4f02-92e0-a3451e0e8b2b',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManumina%20Leger.mp3?alt=media&token=d30a78fd-783f-4f02-92e0-a3451e0e8b2b-1c8399c7',
-                            title: 'Manumina Leger',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FManuminas%20Krop.mp3?alt=media&token=be9ef1e2-85de-48f8-b1a4-4366cd9cbc22',
-                          metas: Metas(
-                            id: 'Lydfiler%2FManuminas%20Krop.mp3?alt=media&token=be9ef1e2-85de-48f8-b1a4-4366cd9cbc22-38bbd6c9',
-                            title: 'Manuminas Krop',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
-                      ),
-                      FlutterFlowAudioPlayer(
-                        audio: Audio.network(
-                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Lydfiler%2FBarnets%20F%C3%B8rste%20Bog.mp3?alt=media&token=d337736a-305c-402f-9646-438d8a17e794',
-                          metas: Metas(
-                            id: 'Lydfiler%2FBarnets%20F%C3%B8rste%20Bog.mp3?alt=media&token=d337736a-305c-402f-9646-438d8a17e794-70b54708',
-                            title: 'Barnets Første Bog',
-                          ),
-                        ),
-                        titleTextStyle: FlutterFlowTheme.of(context)
-                            .titleLarge
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleLargeFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleLargeFamily),
-                            ),
-                        playbackDurationTextStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelMediumFamily),
-                                ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                        playbackButtonColor:
-                            FlutterFlowTheme.of(context).primary,
-                        activeTrackColor:
-                            FlutterFlowTheme.of(context).alternate,
-                        elevation: 4.0,
-                        playInBackground: PlayInBackground.enabled,
+                              );
+                            },
+                          );
+                        },
                       ),
                     ].addToEnd(const SizedBox(height: 100.0)),
                   ),

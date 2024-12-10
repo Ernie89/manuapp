@@ -152,7 +152,7 @@ class _ManuminaharskoldkopperbogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'k00t9sy0' /* Børnebøger */,
+                                      'k00t9sy0' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +183,7 @@ class _ManuminaharskoldkopperbogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'xsidcjqn' /* Manumina har skoldkopper */,
+                                      'xsidcjqn' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -269,8 +269,12 @@ class _ManuminaharskoldkopperbogWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Manumina-kuppiararpoq_har-skoldkopper-Bog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Manumina-kuppiararpoq_har-skoldkopper-Bog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FManumina-kuppiararpoq_har-skoldkopper-Bog.pdf?alt=media&token=7afeff4d-5d08-4c2b-86b1-ef1201cfe512',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'aeiruobj' /* Download PDF */,

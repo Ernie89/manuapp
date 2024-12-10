@@ -151,7 +151,7 @@ class _Barnet1og2WidgetState extends State<Barnet1og2Widget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '7ne9b9ap' /* Bøger til forældre */,
+                                      '7ne9b9ap' /* Forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _Barnet1og2WidgetState extends State<Barnet1og2Widget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'etcw4dny' /* 1 og 2 år */,
+                                      'etcw4dny' /* Materiale til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -266,8 +266,12 @@ class _Barnet1og2WidgetState extends State<Barnet1og2Widget> {
                                 padding: const EdgeInsets.all(25.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    await launchURL(
-                                        'https://manu.gl/wp-content/uploads/2023/05/17786_MANU_Foraeldrebog_1-2aar_Ny-udgave.pdf');
+                                    await downloadFile(
+                                      filename:
+                                          'MANU_Foraeldrebog_1-2aar_Ny-udgave.pdf',
+                                      url:
+                                          'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/17786_MANU_Foraeldrebog_1-2aar_Ny-udgave.pdf?alt=media&token=26dca463-8c07-49ea-8d3b-700d54edbaa2',
+                                    );
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'hzhsptm0' /* Download PDF */,

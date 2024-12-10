@@ -76,13 +76,69 @@ export '/pages/born/haefttilforeldre/ditbarnslegogbevgelse/ditbarnslegogbevgelse
     show DitbarnslegogbevgelseWidget;
 export '/pages/born/plakat/plakat/plakat_widget.dart' show PlakatWidget;
 export '/pages/diverse/downloads/downloads_widget.dart' show DownloadsWidget;
-export '/pages/fagfolk/f0_9/f09_widget.dart' show F09Widget;
-export '/pages/fagfolk/f1_2/f12_widget.dart' show F12Widget;
-export '/pages/fagfolk/f3_4/f34_widget.dart' show F34Widget;
-export '/pages/fagfolk/f5_6/f56_widget.dart' show F56Widget;
-export '/pages/fagfolk/f_alkohol/f_alkohol_widget.dart' show FAlkoholWidget;
-export '/pages/fagfolk/f_hash/f_hash_widget.dart' show FHashWidget;
-export '/pages/fagfolk/f_instruktr/f_instruktr_widget.dart'
+export '/pages/fagfolk/f_09/f0_9/f09_widget.dart' show F09Widget;
+export '/pages/fagfolk/f_34/f3_4/f34_widget.dart' show F34Widget;
+export '/pages/fagfolk/f_56/f5_6/f56_widget.dart' show F56Widget;
+export '/pages/fagfolk/alkohol/f_alkohol/f_alkohol_widget.dart'
+    show FAlkoholWidget;
+export '/pages/fagfolk/hash/f_hash/f_hash_widget.dart' show FHashWidget;
+export '/pages/fagfolk/f_instruktor/f_instruktr/f_instruktr_widget.dart'
     show FInstruktrWidget;
-export '/pages/fagfolk/f_foreldremodet/f_foreldremodet_widget.dart'
+export '/pages/fagfolk/f_foreldremodet/f_foreldremodet/f_foreldremodet_widget.dart'
     show FForeldremodetWidget;
+export '/pages/fagfolk/f_09/frundervisningen/frundervisningen_widget.dart'
+    show FrundervisningenWidget;
+export '/pages/fagfolk/f_09/tilundervisningen/tilundervisningen_widget.dart'
+    show TilundervisningenWidget;
+export '/pages/fagfolk/f_09/powerpoints/powerpoints_widget.dart'
+    show PowerpointsWidget;
+export '/pages/fagfolk/f_09/plakatlogopostkortmm/plakatlogopostkortmm_widget.dart'
+    show PlakatlogopostkortmmWidget;
+export '/pages/fagfolk/f_12/f1_2/f12_widget.dart' show F12Widget;
+export '/pages/fagfolk/f_12/f1_2_powerpoints/f12_powerpoints_widget.dart'
+    show F12PowerpointsWidget;
+export '/pages/fagfolk/f_12/f1_2_frundervisningen/f12_frundervisningen_widget.dart'
+    show F12FrundervisningenWidget;
+export '/pages/fagfolk/f_12/f1_2_tilundervisningen/f12_tilundervisningen_widget.dart'
+    show F12TilundervisningenWidget;
+export '/pages/fagfolk/f_34/f3_4_frundervisningen/f34_frundervisningen_widget.dart'
+    show F34FrundervisningenWidget;
+export '/pages/fagfolk/f_34/f3_4_powerpoints/f34_powerpoints_widget.dart'
+    show F34PowerpointsWidget;
+export '/pages/fagfolk/f_34/f3_4_tilundervisningen/f34_tilundervisningen_widget.dart'
+    show F34TilundervisningenWidget;
+export '/pages/fagfolk/f_34/f3_4_plakatlogopostkortmm/f34_plakatlogopostkortmm_widget.dart'
+    show F34PlakatlogopostkortmmWidget;
+export '/pages/fagfolk/f_56/f5_6_tilundervisningen/f56_tilundervisningen_widget.dart'
+    show F56TilundervisningenWidget;
+export '/pages/fagfolk/f_56/f5_6_materialer/f56_materialer_widget.dart'
+    show F56MaterialerWidget;
+export '/pages/fagfolk/alkohol/f_alkohol_frundervisningen/f_alkohol_frundervisningen_widget.dart'
+    show FAlkoholFrundervisningenWidget;
+export '/pages/fagfolk/alkohol/f_alkohol_tilundervisningen/f_alkohol_tilundervisningen_widget.dart'
+    show FAlkoholTilundervisningenWidget;
+export '/pages/fagfolk/alkohol/f_alkohol_haefter/f_alkohol_haefter_widget.dart'
+    show FAlkoholHaefterWidget;
+export '/pages/fagfolk/f_foreldremodet/f_foreldremodet_frundervisningen/f_foreldremodet_frundervisningen_widget.dart'
+    show FForeldremodetFrundervisningenWidget;
+export '/pages/fagfolk/f_foreldremodet/f_foreldremodet_tilundervisningen/f_foreldremodet_tilundervisningen_widget.dart'
+    show FForeldremodetTilundervisningenWidget;
+export '/pages/fagfolk/f_foreldremodet/f_foreldremodet_powerpoints/f_foreldremodet_powerpoints_widget.dart'
+    show FForeldremodetPowerpointsWidget;
+export '/pages/fagfolk/f_foreldremodet/f_foreldremodet_plakatlogopostkortmm/f_foreldremodet_plakatlogopostkortmm_widget.dart'
+    show FForeldremodetPlakatlogopostkortmmWidget;
+export '/pages/fagfolk/hash/f_hash_frundervisningen/f_hash_frundervisningen_widget.dart'
+    show FHashFrundervisningenWidget;
+export '/pages/fagfolk/hash/f_hash_tilundervisningen/f_hash_tilundervisningen_widget.dart'
+    show FHashTilundervisningenWidget;
+export '/pages/fagfolk/f_hash_materialer/f_hash_materialer_widget.dart'
+    show FHashMaterialerWidget;
+export '/pages/fagfolk/f_instruktor/f_instruktor_frundervisningen/f_instruktor_frundervisningen_widget.dart'
+    show FInstruktorFrundervisningenWidget;
+export '/pages/fagfolk/f_instruktor/f_instruktor_tilundervisningen/f_instruktor_tilundervisningen_widget.dart'
+    show FInstruktorTilundervisningenWidget;
+export '/pages/fagfolk/f_instruktor/pagenotinuse/f_instruktor_powerpoints/f_instruktor_powerpoints_widget.dart'
+    show FInstruktorPowerpointsWidget;
+export '/pages/fagfolk/f_instruktor/f_instruktor_ekstramateriale/f_instruktor_ekstramateriale_widget.dart'
+    show FInstruktorEkstramaterialeWidget;
+export '/pages/nyheder/nyheder_widget.dart' show NyhederWidget;

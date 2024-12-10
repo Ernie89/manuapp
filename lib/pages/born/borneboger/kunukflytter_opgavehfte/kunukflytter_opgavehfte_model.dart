@@ -1,5 +1,6 @@
 import '/components/bottom_navigation/bottom_navigation_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:async';
 import 'kunukflytter_opgavehfte_widget.dart' show KunukflytterOpgavehfteWidget;
 import 'package:flutter/material.dart';
 
@@ -18,5 +19,13 @@ class KunukflytterOpgavehfteModel
   @override
   void dispose() {
     bottomNavigationModel.dispose();
+  }
+
+  /// Action blocks.
+  Future<FFUploadedFile?> fileMinik(
+    BuildContext context, {
+    FFUploadedFile? minikFile,
+  }) async {
+    return null;
   }
 }

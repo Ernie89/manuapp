@@ -257,7 +257,7 @@ class _FagfolkWidgetState extends State<FagfolkWidget> {
                                       );
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      '2qw31h4a' /* MANU 0-9 mdr. */,
+                                      '2qw31h4a' /* Manu 0-9 mdr. */,
                                     ),
                                     options: FFButtonOptions(
                                       width: 320.0,
@@ -310,22 +310,11 @@ class _FagfolkWidgetState extends State<FagfolkWidget> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed(
-                                        'F1-2',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                          ),
-                                        },
-                                      );
+                                    onPressed: () {
+                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'is3qlpj6' /* MANU 1-2 år */,
+                                      'is3qlpj6' /* Manu 1-2 år */,
                                     ),
                                     options: FFButtonOptions(
                                       width: 245.0,

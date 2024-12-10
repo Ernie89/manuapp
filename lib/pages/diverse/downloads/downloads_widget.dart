@@ -1,11 +1,14 @@
+import '/backend/backend.dart';
 import '/components/bottom_navigation/bottom_navigation_widget.dart';
+import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:async';
-import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/flutter_flow_video_player.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'downloads_model.dart';
 export 'downloads_model.dart';
@@ -183,13 +186,384 @@ class _DownloadsWidgetState extends State<DownloadsWidget> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width * 0.8,
-                      height: MediaQuery.sizeOf(context).height * 0.65,
-                      child: custom_widgets.OfflineVideosPage(
-                        width: MediaQuery.sizeOf(context).width * 0.8,
-                        height: MediaQuery.sizeOf(context).height * 0.65,
+                    StreamBuilder<List<DowloadedFilesRecord>>(
+                      stream: queryDowloadedFilesRecord(
+                        queryBuilder: (dowloadedFilesRecord) =>
+                            dowloadedFilesRecord.where(
+                          'FileType',
+                          isEqualTo: 'mp4',
+                        ),
                       ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return const Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: SpinKitDoubleBounce(
+                                color: Color(0xFF9DCFC2),
+                                size: 50.0,
+                              ),
+                            ),
+                          );
+                        }
+                        List<DowloadedFilesRecord>
+                            listViewDowloadedFilesRecordList = snapshot.data!;
+
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewDowloadedFilesRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewDowloadedFilesRecord =
+                                listViewDowloadedFilesRecordList[listViewIndex];
+                            return Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 25.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'k5kcu6u2' /* Videoer */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            fontSize: 23.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 25.0, 0.0, 0.0),
+                                  child: Text(
+                                    listViewDowloadedFilesRecord.fileName,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 25.0, 0.0, 25.0),
+                                  child: FlutterFlowVideoPlayer(
+                                    path: listViewDowloadedFilesRecord
+                                        .downloadURL,
+                                    videoType: VideoType.network,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.9,
+                                    height: double.infinity,
+                                    autoPlay: false,
+                                    looping: true,
+                                    showControls: true,
+                                    allowFullScreen: true,
+                                    allowPlaybackSpeedMenu: false,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    StreamBuilder<List<DowloadedFilesRecord>>(
+                      stream: queryDowloadedFilesRecord(
+                        queryBuilder: (dowloadedFilesRecord) =>
+                            dowloadedFilesRecord.where(
+                          'FileType',
+                          isEqualTo: 'mp3',
+                        ),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return const Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: SpinKitDoubleBounce(
+                                color: Color(0xFF9DCFC2),
+                                size: 50.0,
+                              ),
+                            ),
+                          );
+                        }
+                        List<DowloadedFilesRecord>
+                            listViewDowloadedFilesRecordList = snapshot.data!;
+
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewDowloadedFilesRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewDowloadedFilesRecord =
+                                listViewDowloadedFilesRecordList[listViewIndex];
+                            return Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 25.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'vr6cq0fk' /* Lydbøger */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            fontSize: 23.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 25.0, 0.0, 0.0),
+                                  child: Text(
+                                    listViewDowloadedFilesRecord.fileName,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 25.0, 0.0, 25.0),
+                                  child: FlutterFlowAudioPlayer(
+                                    audio: Audio.network(
+                                      listViewDowloadedFilesRecord.soundFile,
+                                      metas: Metas(
+                                        title: listViewDowloadedFilesRecord
+                                            .fileName,
+                                      ),
+                                    ),
+                                    titleTextStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily),
+                                        ),
+                                    playbackDurationTextStyle: FlutterFlowTheme
+                                            .of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
+                                        ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    playbackButtonColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    activeTrackColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    inactiveTrackColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    elevation: 0.0,
+                                    playInBackground: PlayInBackground
+                                        .disabledRestoreOnForeground,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    StreamBuilder<List<DowloadedFilesRecord>>(
+                      stream: queryDowloadedFilesRecord(
+                        queryBuilder: (dowloadedFilesRecord) =>
+                            dowloadedFilesRecord.where(
+                          'FileType',
+                          isEqualTo: 'pdf,word,pptx',
+                        ),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return const Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: SpinKitDoubleBounce(
+                                color: Color(0xFF9DCFC2),
+                                size: 50.0,
+                              ),
+                            ),
+                          );
+                        }
+                        List<DowloadedFilesRecord>
+                            listViewDowloadedFilesRecordList = snapshot.data!;
+
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewDowloadedFilesRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewDowloadedFilesRecord =
+                                listViewDowloadedFilesRecordList[listViewIndex];
+                            return Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 25.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'e02q0yrd' /* Dokumenter */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            fontSize: 23.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      25.0, 25.0, 25.0, 25.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        listViewDowloadedFilesRecord.fileName,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
+                                      ),
+                                      FFButtonWidget(
+                                        onPressed: () async {
+                                          await launchURL(
+                                              listViewDowloadedFilesRecord
+                                                  .documentURL);
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'e51lkf75' /* Åben fil */,
+                                        ),
+                                        options: FFButtonOptions(
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily,
+                                                color: Colors.white,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily),
+                                              ),
+                                          elevation: 0.0,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
                     ),
                   ].addToEnd(const SizedBox(height: 100.0)),
                 ),

@@ -71,10 +71,6 @@
     <string>Allow Read Files</string>
 	<key>LSApplicationQueriesSchemes</key>
     <string>Allow Read Files</string>
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>audio</string>
-    </array>
 
 
 	<key>UILaunchStoryboardName</key>

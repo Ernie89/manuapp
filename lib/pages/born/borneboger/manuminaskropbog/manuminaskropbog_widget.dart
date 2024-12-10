@@ -76,7 +76,7 @@ class _ManuminaskropbogWidgetState extends State<ManuminaskropbogWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'yelazrbz' /* Manuminas krop */,
+              'yelazrbz' /* Manuminap timaa */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -150,7 +150,7 @@ class _ManuminaskropbogWidgetState extends State<ManuminaskropbogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '3yf4f8bj' /* Børnebøger */,
+                                      '3yf4f8bj' /* Meeqqanut */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -181,7 +181,7 @@ class _ManuminaskropbogWidgetState extends State<ManuminaskropbogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '07zbijx2' /* Manuminas krop */,
+                                      '07zbijx2' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -267,8 +267,12 @@ class _ManuminaskropbogWidgetState extends State<ManuminaskropbogWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Manuminap-timaa_krop-Bog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Manuminap-timaa_krop-Bog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FManuminap-timaa_krop-Bog.pdf?alt=media&token=7666862b-484a-42e3-8391-dadeb702cefc',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'acepe1rf' /* Download PDF */,

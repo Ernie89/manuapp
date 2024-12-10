@@ -153,7 +153,7 @@ class _InformationOmAlkoholWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'eytam4iv' /* Bøger til forældre */,
+                                      'eytam4iv' /* Forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -184,7 +184,7 @@ class _InformationOmAlkoholWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'lgl66mht' /* Alkohol */,
+                                      'lgl66mht' /* Bøger til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -255,8 +255,12 @@ class _InformationOmAlkoholWidgetState
                           padding: const EdgeInsets.all(25.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await launchURL(
-                                  'https://manu.gl/wp-content/uploads/2022/10/MANU-Information-om-alkohol-til-foraeldre.pdf');
+                              await downloadFile(
+                                filename:
+                                    'MANU-Information-om-alkohol-til-foraeldre.pdf',
+                                url:
+                                    'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/MANU-Information-om-alkohol-til-foraeldre.pdf?alt=media&token=84437c72-81c7-4776-8817-8519a6bbd191',
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'enfg46op' /* Download PDF */,

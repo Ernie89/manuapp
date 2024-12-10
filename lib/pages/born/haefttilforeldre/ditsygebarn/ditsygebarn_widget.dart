@@ -150,7 +150,7 @@ class _DitsygebarnWidgetState extends State<DitsygebarnWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'ia20j9yv' /* Hæfte til forældre */,
+                                      'ia20j9yv' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -181,7 +181,7 @@ class _DitsygebarnWidgetState extends State<DitsygebarnWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'gf3idg3c' /* Dit syge barn */,
+                                      'gf3idg3c' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -267,8 +267,12 @@ class _DitsygebarnWidgetState extends State<DitsygebarnWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Meeqqat-napparsimasoq_Dit-syge-barn.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Meeqqat-napparsimasoq_Dit-syge-barn.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMeeqqat-napparsimasoq_Dit-syge-barn.pdf?alt=media&token=82c23629-c747-428a-aae7-78ff9c263274',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'gs2gm1x2' /* Download PDF */,

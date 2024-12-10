@@ -151,7 +151,7 @@ class _ManuminasflelserbogWidgetState extends State<ManuminasflelserbogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '4ze5p8pk' /* Børnebøger */,
+                                      '4ze5p8pk' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _ManuminasflelserbogWidgetState extends State<ManuminasflelserbogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '0yzo1zyu' /* Manuminas følelser */,
+                                      '0yzo1zyu' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -268,8 +268,12 @@ class _ManuminasflelserbogWidgetState extends State<ManuminasflelserbogWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Manuminap-misigissusai_folelser-Bog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Manuminap-misigissusai_folelser-Bog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FManuminap-misigissusai_folelser-Bog.pdf?alt=media&token=cdd2b182-53f1-4f7b-9983-3df4ff6d51dd',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '51f2qj4r' /* Download PDF */,

@@ -153,7 +153,7 @@ class _Barnet5og6WidgetState extends State<Barnet5og6Widget> {
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'cx023not' /* Bøger til forældre */,
+                                        'cx023not' /* Forældre */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -184,7 +184,7 @@ class _Barnet5og6WidgetState extends State<Barnet5og6Widget> {
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '3zqtveyi' /* 5 og 6 år */,
+                                        '3zqtveyi' /* Materiale til forældre */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -269,8 +269,12 @@ class _Barnet5og6WidgetState extends State<Barnet5og6Widget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2023/05/MANU_Foraeldrebog_5-6aaar_web.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU_Foraeldrebog_5-6aaar_web.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/MANU_Foraeldrebog_5-6aaar_web.pdf?alt=media&token=aea3595e-76a8-4723-8e74-dcb728f86f18',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '1r59skhj' /* Download PDF */,

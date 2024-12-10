@@ -152,7 +152,7 @@ class _DitbarnslegogbevgelseWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'objqiks6' /* Hæfte til forældre */,
+                                      'objqiks6' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +183,7 @@ class _DitbarnslegogbevgelseWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'lrvz9weh' /* Dit barns leg og bevægelse */,
+                                      'lrvz9weh' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -269,8 +269,12 @@ class _DitbarnslegogbevgelseWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Meeqqavit-Pinnguarneara-Aalaneralu_Dit-barns-leg-og-bevaegelse.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Meeqqavit-Pinnguarneara-Aalaneralu_Dit-barns-leg-og-bevaegelse.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMeeqqavit-Pinnguarneara-Aalaneralu_Dit-barns-leg-og-bevaegelse.pdf?alt=media&token=d3b8c3fe-eb6a-46a9-bc0d-a7c787847a66',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'qnojnkkl' /* Download PDF */,

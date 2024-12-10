@@ -150,7 +150,7 @@ class _DitbarnssvnWidgetState extends State<DitbarnssvnWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '2lel71hp' /* Hæfte til forældre */,
+                                      '2lel71hp' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -181,7 +181,7 @@ class _DitbarnssvnWidgetState extends State<DitbarnssvnWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'zvr0m5rg' /* Dit barns søvn */,
+                                      'zvr0m5rg' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -267,8 +267,12 @@ class _DitbarnssvnWidgetState extends State<DitbarnssvnWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-2-3-ar-Meeqqavit-sinittarnissaa_Dit-barns-sovn.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-2-3-ar-Meeqqavit-sinittarnissaa_Dit-barns-sovn.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMANU-2-3-ar-Meeqqavit-sinittarnissaa_Dit-barns-sovn.pdf?alt=media&token=5ae58a89-1a7e-42fe-89a9-a9e42e720b69',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '9ijw2qpz' /* Download PDF */,

@@ -204,53 +204,64 @@ class _KontaktWidgetState extends State<KontaktWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Material(
-                              color: Colors.transparent,
-                              child: ListTile(
-                                leading: const Icon(
-                                  Icons.mail,
-                                ),
-                                title: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '6bxwqy1r' /* MANU hovedmail: */,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await launchURL('mailto:manu@nanoq.gl');
+                              },
+                              child: Material(
+                                color: Colors.transparent,
+                                child: ListTile(
+                                  leading: const Icon(
+                                    Icons.mail,
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleLargeFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLargeFamily),
-                                      ),
-                                ),
-                                subtitle: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '6vjzhv3r' /* manu@nanoq.gl */,
+                                  title: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '6bxwqy1r' /* MANU hovedmail: */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily),
+                                        ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelMediumFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMediumFamily),
-                                      ),
+                                  subtitle: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '6vjzhv3r' /* manu@nanoq.gl */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
+                                        ),
+                                  ),
+                                  trailing: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 20.0,
+                                  ),
+                                  tileColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  dense: false,
                                 ),
-                                trailing: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 20.0,
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                dense: false,
                               ),
                             ),
                           ],

@@ -155,7 +155,7 @@ class _Forldreforberedelse09mndWidgetState
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '5oax3zsn' /* Bøger til forældre */,
+                                        '5oax3zsn' /* Forældre */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -186,7 +186,7 @@ class _Forldreforberedelse09mndWidgetState
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'wjlk6ulp' /* 0-9 måneder */,
+                                        'wjlk6ulp' /* Materiale til forældre  */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -271,8 +271,12 @@ class _Forldreforberedelse09mndWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-Foraeldreforberedelse-0-9-maneder.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-Foraeldreforberedelse-0-9-maneder.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/MANU-Foraeldreforberedelse-0-9-maneder.pdf?alt=media&token=477d6dac-4e78-4bf1-91c6-e1bdfbebecf6',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'vhv3rmrx' /* Download PDF */,

@@ -151,7 +151,7 @@ class _Spilleregler56WidgetState extends State<Spilleregler56Widget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'glqpw8la' /* Bøger til forældre */,
+                                      'glqpw8la' /* Forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _Spilleregler56WidgetState extends State<Spilleregler56Widget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'x4t7p2wc' /* 5-6 år */,
+                                      'x4t7p2wc' /* Ekstra materiale */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -253,8 +253,11 @@ class _Spilleregler56WidgetState extends State<Spilleregler56Widget> {
                           padding: const EdgeInsets.all(25.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await launchURL(
-                                  'https://manu.gl/wp-content/uploads/2024/06/MANU-regler-til-spil-5-6-ar.pdf');
+                              await downloadFile(
+                                filename: 'MANU-regler-til-spil-5-6-ar.pdf',
+                                url:
+                                    'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/MANU-regler-til-spil-5-6-ar.pdf?alt=media&token=bf6c9d2c-09ef-48b3-8179-547a754aa681',
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'n3lxiz8m' /* Download PDF */,

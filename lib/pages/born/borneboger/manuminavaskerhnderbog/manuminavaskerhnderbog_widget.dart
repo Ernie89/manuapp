@@ -152,7 +152,7 @@ class _ManuminavaskerhnderbogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'lp5u1h5g' /* Børnebøger */,
+                                      'lp5u1h5g' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +183,7 @@ class _ManuminavaskerhnderbogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'ze8d8q3v' /* Manumina vasker hænder */,
+                                      'ze8d8q3v' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -269,8 +269,12 @@ class _ManuminavaskerhnderbogWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Manuminaq-assani-errortorpai_Manumina-vasker-haender.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Manuminaq-assani-errortorpai_Manumina-vasker-haender.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FManuminaq-assani-errortorpai_Manumina-vasker-haender.pdf?alt=media&token=d1cd23bf-f0b8-402c-95b5-9e88528f2e93',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'm9wxq05o' /* Download PDF */,

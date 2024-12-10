@@ -206,7 +206,7 @@ class _ForealdreWidgetState extends State<ForealdreWidget> {
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.8,
+                        width: MediaQuery.sizeOf(context).width * 0.85,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -246,10 +246,10 @@ class _ForealdreWidgetState extends State<ForealdreWidget> {
                                     );
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'gtuylcw2' /* Bøger Til Forældre */,
+                                    'gtuylcw2' /* Materiale til forældre  */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 320.0,
+                                    width: 357.0,
                                     height: 50.0,
                                     padding: const EdgeInsets.all(0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(

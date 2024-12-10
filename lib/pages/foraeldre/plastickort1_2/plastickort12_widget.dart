@@ -151,7 +151,7 @@ class _Plastickort12WidgetState extends State<Plastickort12Widget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'dmnp7flb' /* Bøger til forældre */,
+                                      'dmnp7flb' /* Forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _Plastickort12WidgetState extends State<Plastickort12Widget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'b5vdzau3' /* 1 og 2 år */,
+                                      'b5vdzau3' /* Ekstra materiale */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -253,8 +253,11 @@ class _Plastickort12WidgetState extends State<Plastickort12Widget> {
                           padding: const EdgeInsets.all(25.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await launchURL(
-                                  'https://manu.gl/wp-content/uploads/2023/05/17786_MANU_Plastickort_1-2aar.pdf');
+                              await downloadFile(
+                                filename: 'MANU_Plastickort_1-2aar.pdf',
+                                url:
+                                    'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/17786_MANU_Plastickort_1-2aar.pdf?alt=media&token=8ad53fac-d548-479c-8523-fa807867f114',
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               '0m85vme3' /* Download PDF */,

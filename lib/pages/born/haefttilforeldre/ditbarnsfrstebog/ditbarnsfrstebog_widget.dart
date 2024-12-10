@@ -150,7 +150,7 @@ class _DitbarnsfrstebogWidgetState extends State<DitbarnsfrstebogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'z5mhg8zl' /* Hæfte til forældre */,
+                                      'z5mhg8zl' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -181,7 +181,7 @@ class _DitbarnsfrstebogWidgetState extends State<DitbarnsfrstebogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'pir9ek7g' /* Dit barns første bog */,
+                                      'pir9ek7g' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -267,8 +267,12 @@ class _DitbarnsfrstebogWidgetState extends State<DitbarnsfrstebogWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Meeqqavit-atuagaa-siulleq_Dit-barns-forste-bog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Meeqqavit-atuagaa-siulleq_Dit-barns-forste-bog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMeeqqavit-atuagaa-siulleq_Dit-barns-forste-bog.pdf?alt=media&token=d42f58ae-106e-4a36-baa9-661930c64b75',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '66p6d3qp' /* Download PDF */,

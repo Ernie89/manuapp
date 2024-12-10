@@ -152,7 +152,7 @@ class _DitbarnstarteriskoleWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '0fq55j4e' /* Hæfte til forældre */,
+                                      '0fq55j4e' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +183,7 @@ class _DitbarnstarteriskoleWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'fbdyn97k' /* Børnebøger */,
+                                      'fbdyn97k' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -269,8 +269,12 @@ class _DitbarnstarteriskoleWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-5-6-ar-Qitornat-atualerpoq_Dit-barn-starter-i-skole.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-5-6-ar-Qitornat-atualerpoq_Dit-barn-starter-i-skole.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMANU-5-6-ar-Qitornat-atualerpoq_Dit-barn-starter-i-skole.pdf?alt=media&token=1bcd1ca4-1775-42be-8f1a-b58e32fc18d9',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'qmg3cwhy' /* Download PDF */,

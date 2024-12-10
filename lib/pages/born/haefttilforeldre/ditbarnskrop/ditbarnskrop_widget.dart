@@ -150,7 +150,7 @@ class _DitbarnskropWidgetState extends State<DitbarnskropWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '73omil1a' /* Hæfte til forældre */,
+                                      '73omil1a' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -181,7 +181,7 @@ class _DitbarnskropWidgetState extends State<DitbarnskropWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'sfzfr10q' /* Dit barns krop */,
+                                      'sfzfr10q' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -267,8 +267,12 @@ class _DitbarnskropWidgetState extends State<DitbarnskropWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Meeqqavit-Timaa_dit-barns-krop.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Meeqqavit-Timaa_dit-barns-krop.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMeeqqavit-Timaa_dit-barns-krop.pdf?alt=media&token=597f8e31-86b5-4d6b-8271-d48149d9ec60',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'rhefnv2w' /* Download PDF */,

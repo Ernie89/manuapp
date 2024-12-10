@@ -87,276 +87,426 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 0.8,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 1.0,
-                      decoration: const BoxDecoration(),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 50.0, 0.0, 25.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: Image.asset(
-                                  'assets/images/Forldre.jpg',
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  fit: BoxFit.fill,
-                                  alignment: const Alignment(0.0, 0.0),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      'Forealdre',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 300),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Wrap(
+                                  spacing: 0.0,
+                                  runSpacing: 0.0,
+                                  alignment: WrapAlignment.center,
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  direction: Axis.vertical,
+                                  runAlignment: WrapAlignment.center,
+                                  verticalDirection: VerticalDirection.down,
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 50.0, 0.0, 25.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        child: Image.asset(
+                                          'assets/images/Forldre.jpg',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.9,
+                                          fit: BoxFit.fill,
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    '3bdainxv' /* Forældre */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 200.0,
-                                    height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF9DCFC2),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 50.0, 0.0, 25.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: Image.asset(
-                                  'assets/images/5-6.jpg',
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  fit: BoxFit.fill,
-                                  alignment: const Alignment(0.0, 0.0),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      'Boern',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 300),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'Forealdre',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 300),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '3bdainxv' /* Forældre */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 200.0,
+                                            height: 50.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'py0vzg07' /* Børn */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 200.0,
-                                    height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF9DCFC2),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 40.0, 0.0, 25.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: Image.asset(
-                                  'assets/images/Kommende-forldreskab.png',
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  fit: BoxFit.fill,
-                                  alignment: const Alignment(0.0, 0.0),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      'Fagfolk',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 300),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 50.0, 0.0, 25.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        child: Image.asset(
+                                          'assets/images/5-6-2.jpg',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.9,
+                                          fit: BoxFit.fill,
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    '6slpoflh' /* Fagfolk */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 300.0,
-                                    height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF9DCFC2),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 40.0, 0.0, 25.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: Image.asset(
-                                  'assets/images/MANU-Foraeldreforberedelse-5-6-ar-poster.jpg',
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  fit: BoxFit.fill,
-                                  alignment: const Alignment(0.0, 0.0),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed(
-                                      'Downloads',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 300),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'Boern',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 300),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'py0vzg07' /* Børn */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 200.0,
+                                            height: 50.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      },
-                                    );
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'pusj9214' /* Downloads */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 300.0,
-                                    height: 50.0,
-                                    padding: const EdgeInsets.all(0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF9DCFC2),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          fontSize: 25.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 40.0, 0.0, 25.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        child: Image.asset(
+                                          'assets/images/Kommende-foraeldreskab.png',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.9,
+                                          fit: BoxFit.fill,
+                                          alignment: const Alignment(0.0, 0.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'Fagfolk',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 300),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '6slpoflh' /* Fagfolk */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 300.0,
+                                            height: 50.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 40.0, 0.0, 25.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        child: Image.asset(
+                                          'assets/images/tilundervisning1.jpg',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.9,
+                                          fit: BoxFit.fill,
+                                          alignment: const Alignment(0.0, 0.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'Nyheder',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 300),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'pusj9214' /* Nyheder */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 300.0,
+                                            height: 50.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 40.0, 0.0, 25.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        child: Image.asset(
+                                          'assets/images/MANU-Foraeldreforberedelse-5-6-ar-poster.jpg',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.9,
+                                          fit: BoxFit.fill,
+                                          alignment: const Alignment(0.0, 0.0),
+                                        ),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(25.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'Downloads',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    const TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .rightToLeft,
+                                                  duration: Duration(
+                                                      milliseconds: 300),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'kuogbqdj' /* Downloads */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 300.0,
+                                            height: 50.0,
+                                            padding: const EdgeInsets.all(0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: const Color(0xFF9DCFC2),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 25.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ),
-                          ].addToEnd(const SizedBox(height: 100.0)),
+                            ].addToEnd(const SizedBox(height: 100.0)),
+                          ),
                         ),
                       ),
                     ),

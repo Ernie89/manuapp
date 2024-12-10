@@ -1,10 +1,10 @@
+import '/backend/backend.dart';
 import '/components/bottom_navigation/bottom_navigation_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_pdf_viewer.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -152,7 +152,7 @@ class _KunukflytterOpgavehfteWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'tcz7yzxw' /* Børnebøger */,
+                                      'tcz7yzxw' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +183,7 @@ class _KunukflytterOpgavehfteWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '7cza1q19' /* Kunuk flytter */,
+                                      '7cza1q19' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -247,7 +247,7 @@ class _KunukflytterOpgavehfteWidgetState
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'badp2roi' /* Kunuk flytter (Opgavehæfte) */,
+                                  'badp2roi' /* Kunuk nuuppoq (Opgavehæfte) */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -269,8 +269,22 @@ class _KunukflytterOpgavehfteWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-5-6-ar-Kunuk-nuuppoq_flytter-Opgavehaefte.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-5-6-ar-Kunuk-nuuppoq_flytter-Opgavehaefte.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FMANU-5-6-ar-Kunuk-nuuppoq_flytter-Opgavehaefte.pdf?alt=media&token=15b494de-e2d6-4565-9668-0991dc10cd3a',
+                                      );
+
+                                      await DowloadedFilesRecord.collection
+                                          .doc()
+                                          .set(createDowloadedFilesRecordData(
+                                            fileName:
+                                                'MANU-5-6-ar-Kunuk-nuuppoq_flytter-Opgavehaefte.pdf',
+                                            downloadURL:
+                                                'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FMANU-5-6-ar-Kunuk-nuuppoq_flytter-Opgavehaefte.pdf?alt=media&token=15b494de-e2d6-4565-9668-0991dc10cd3a',
+                                            fileType: 'pdf,word,pptx',
+                                          ));
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'lmulgdf1' /* Download PDF */,

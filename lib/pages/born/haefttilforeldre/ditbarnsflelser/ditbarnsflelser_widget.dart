@@ -150,7 +150,7 @@ class _DitbarnsflelserWidgetState extends State<DitbarnsflelserWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '2owvcem8' /* Hæfte til forældre */,
+                                      '2owvcem8' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -181,7 +181,7 @@ class _DitbarnsflelserWidgetState extends State<DitbarnsflelserWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'rt14qav9' /* Dit barns følelser */,
+                                      'rt14qav9' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -267,8 +267,12 @@ class _DitbarnsflelserWidgetState extends State<DitbarnsflelserWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Meeqqavit-misigissusai_Dit-barns-folelser.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Meeqqavit-misigissusai_Dit-barns-folelser.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMeeqqavit-misigissusai_Dit-barns-folelser.pdf?alt=media&token=9f3533f0-cacc-44f5-9542-fa077d2ff615',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'zl0538ue' /* Download PDF */,

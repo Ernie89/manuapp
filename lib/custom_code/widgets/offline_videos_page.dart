@@ -4,13 +4,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom widgets
 import '/custom_code/actions/index.dart'; // Imports custom actions
+import '/flutter_flow/custom_functions.dart'; // Imports custom functions
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'dart:io';
-import 'package:hive/hive.dart';
-import 'package:pod_player/pod_player.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class OfflineVideosPage extends StatefulWidget {
   final double? width;
@@ -24,108 +25,154 @@ class OfflineVideosPage extends StatefulWidget {
 }
 
 class _OfflineVideosPageState extends State<OfflineVideosPage> {
-  late Box<String> videosBox;
+  List<File> videoFiles = []; // List to hold video files
 
   @override
   void initState() {
     super.initState();
-    loadVideos();
+    checkPermissionsAndFetchVideos();
   }
 
-  Future<void> loadVideos() async {
-    try {
-      videosBox = await Hive.openBox<String>('videos');
-      print('Videos loaded from Hive: ${videosBox.values.toList()}');
-    } catch (e) {
-      print('Error loading videos from Hive: $e');
+  Future<void> checkPermissionsAndFetchVideos() async {
+    if (Platform.isAndroid || Platform.isIOS) {
+      if (await _requestStoragePermissions()) {
+        await fetchVideosFromDownloadsFolder();
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Storage access is not supported on this platform.')),
+      );
     }
-    setState(() {});
+  }
+
+  Future<bool> _requestStoragePermissions() async {
+    if (Platform.isAndroid) {
+      if (await Permission.storage.isGranted) {
+        return true;
+      }
+
+      final storagePermission = await Permission.storage.request();
+
+      if (storagePermission.isGranted) {
+        return true;
+      }
+
+      if (storagePermission.isPermanentlyDenied) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('Please enable storage permission from settings.')),
+        );
+        await openAppSettings();
+        return false;
+      }
+
+      return false;
+    } else if (Platform.isIOS) {
+      // iOS-specific: No additional permissions required for app directories
+      return true;
+    }
+
+    return false;
+  }
+
+  Future<void> fetchVideosFromDownloadsFolder() async {
+    try {
+      Directory? downloadsDirectory;
+
+      if (Platform.isAndroid) {
+        final directories = await getExternalStorageDirectories(
+            type: StorageDirectory.downloads);
+        if (directories != null && directories.isNotEmpty) {
+          downloadsDirectory = directories.first;
+        }
+      } else if (Platform.isIOS) {
+        downloadsDirectory = await getApplicationDocumentsDirectory();
+      }
+
+      if (downloadsDirectory == null || !await downloadsDirectory.exists()) {
+        print('Download directory is null or does not exist.');
+        return;
+      }
+
+      final files = downloadsDirectory.listSync();
+
+      final videoFilesFiltered = files
+          .whereType<File>() // Ensure only files
+          .where((file) =>
+              file.path.endsWith('.mp4') || file.path.endsWith('.avi'))
+          .toList();
+
+      setState(() {
+        videoFiles = videoFilesFiltered;
+      });
+
+      print('Videos found: ${videoFiles.map((file) => file.path).toList()}');
+    } catch (e) {
+      print('Error fetching videos from directory: $e');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Offline Videos'),
-      ),
-      body: videosBox.isNotEmpty
-          ? ListView.builder(
-              itemCount: videosBox.length,
-              itemBuilder: (context, index) {
-                final fileName = videosBox.keyAt(index) as String;
-                final filePath = videosBox.get(fileName) as String;
+      backgroundColor: const Color(0xFFFFFFFF), // White background
+      body: Container(
+        width: widget.width ?? MediaQuery.of(context).size.width,
+        height: widget.height ?? MediaQuery.of(context).size.height,
+        child: videoFiles.isNotEmpty
+            ? ListView.builder(
+                itemCount: videoFiles.length,
+                itemBuilder: (context, index) {
+                  final videoFile = videoFiles[index];
+                  final fileName = videoFile.path.split('/').last;
 
-                // Check if the file exists
-                if (!File(filePath).existsSync()) {
                   return ListTile(
-                    title: Text('Video ${index + 1} (Missing)'),
-                    subtitle: Text('File path: $filePath'),
-                    trailing: const Icon(Icons.error, color: Colors.red),
+                    title: Text('Video ${index + 1}'),
+                    subtitle: Text(fileName),
+                    trailing: const Icon(Icons.play_arrow),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => VideoPlayerScreen(
+                            videoFilePath: videoFile.path,
+                          ),
+                        ),
+                      );
+                    },
                   );
-                }
-
-                return ListTile(
-                  title: Text('Video ${index + 1}'),
-                  subtitle: Text(filePath),
-                  trailing: const Icon(Icons.play_arrow),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            VideoPlayerScreen(videoFilePath: filePath),
-                      ),
-                    );
-                  },
-                );
-              },
-            )
-          : const Center(
-              child: Text(
-                'No downloaded videos available. Download videos first to see them here.',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16),
+                },
+              )
+            : const Center(
+                child: Text(
+                  'No downloaded videos found.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
-            ),
+      ),
     );
   }
 }
 
-class VideoPlayerScreen extends StatefulWidget {
+class VideoPlayerScreen extends StatelessWidget {
   final String videoFilePath;
 
   const VideoPlayerScreen({Key? key, required this.videoFilePath})
       : super(key: key);
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
-}
-
-class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  late final PodPlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = PodPlayerController(
-      playVideoFrom: PlayVideoFrom.file(File(widget.videoFilePath)),
-    )..initialise();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Video Player'),
+        title: const Text('Playing Video'),
       ),
       body: Center(
-        child: PodVideoPlayer(controller: _controller),
+        child: Text(
+          'Play video from: $videoFilePath',
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

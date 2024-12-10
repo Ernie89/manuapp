@@ -77,7 +77,7 @@ class _DitbarnvaskerhnderWidgetState extends State<DitbarnvaskerhnderWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'nffapabz' /* Hæfte til forældre */,
+              'nffapabz' /* Dit barn vasker hænder */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
@@ -151,7 +151,7 @@ class _DitbarnvaskerhnderWidgetState extends State<DitbarnvaskerhnderWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'z4mojber' /* Hæfte til forældre */,
+                                      'z4mojber' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _DitbarnvaskerhnderWidgetState extends State<DitbarnvaskerhnderWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'loh63hsl' /* Dit barn vasker hænder */,
+                                      'loh63hsl' /* Hæfte til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -268,8 +268,12 @@ class _DitbarnvaskerhnderWidgetState extends State<DitbarnvaskerhnderWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-4-5-ar-Meeqqavit-assani-errortorpai_Dit-barn-vasker-haender.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-4-5-ar-Meeqqavit-assani-errortorpai_Dit-barn-vasker-haender.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FH%C3%A6fte%20til%20for%C3%A6ldre%2FMANU-4-5-ar-Meeqqavit-assani-errortorpai_Dit-barn-vasker-haender.pdf?alt=media&token=d3be332c-7615-444e-b5b7-626706b47775',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       't9op74ut' /* Download PDF */,

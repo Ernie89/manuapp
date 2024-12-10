@@ -150,7 +150,7 @@ class _PlakatWidgetState extends State<PlakatWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'agpbofzb' /* Plakat */,
+                                      'agpbofzb' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -166,23 +166,35 @@ class _PlakatWidgetState extends State<PlakatWidget> {
                                         ),
                                   ),
                                 ),
-                                Container(
-                                  height: 100.0,
-                                  decoration: const BoxDecoration(),
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                ),
-                                Container(
-                                  height: 100.0,
-                                  decoration: const BoxDecoration(),
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 5.0, 0.0),
+                                  child: Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    size: 16.0,
+                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 16.0, 0.0),
-                                  child: Container(
-                                    height: 100.0,
-                                    decoration: const BoxDecoration(),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                      5.0, 0.0, 5.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'zx6k8w40' /* Plakaati */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Readex Pro'),
+                                        ),
                                   ),
                                 ),
                               ],
@@ -214,7 +226,7 @@ class _PlakatWidgetState extends State<PlakatWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'u0a7udoc' /* Plakat */,
+                                  'u0a7udoc' /* Plakaati */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -255,8 +267,11 @@ class _PlakatWidgetState extends State<PlakatWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-born-plakat.pdf');
+                                      await downloadFile(
+                                        filename: 'MANU-born-plakat.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FPlakat%2FMANU-born-plakat.pdf?alt=media&token=64d7c7ef-248f-4794-95fe-3a74ebef7616',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '9axg22na' /* Download PDF */,

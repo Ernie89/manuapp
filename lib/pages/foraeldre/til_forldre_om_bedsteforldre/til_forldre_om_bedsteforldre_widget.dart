@@ -153,7 +153,7 @@ class _TilForldreOmBedsteforldreWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '9kf1a0si' /* Bøger til forældre */,
+                                      '9kf1a0si' /* Forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -184,7 +184,7 @@ class _TilForldreOmBedsteforldreWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '1xzjw8lh' /* Bedsteforældre */,
+                                      '1xzjw8lh' /* Materiale til forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -255,8 +255,12 @@ class _TilForldreOmBedsteforldreWidgetState
                           padding: const EdgeInsets.all(25.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await launchURL(
-                                  'https://manu.gl/wp-content/uploads/2022/10/MANU-Foaeldrernes-tackling-af-bedsteforaeldrene.pdf');
+                              await downloadFile(
+                                filename:
+                                    'MANU-Foaeldrernes-tackling-af-bedsteforaeldrene.pdf',
+                                url:
+                                    'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/MANU-Foaeldrernes-tackling-af-bedsteforaeldrene.pdf?alt=media&token=9d3ed843-9f2b-474c-bf43-87753d6810e2',
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'wxdyjdba' /* Download PDF */,

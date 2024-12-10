@@ -151,7 +151,7 @@ class _HashInformationWidgetState extends State<HashInformationWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'lz4baojr' /* Bøger til forældre */,
+                                      'lz4baojr' /* Forældre */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _HashInformationWidgetState extends State<HashInformationWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'up22e2hd' /* Hash */,
+                                      'up22e2hd' /* Materiale til forældre  */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -253,8 +253,12 @@ class _HashInformationWidgetState extends State<HashInformationWidget> {
                           padding: const EdgeInsets.all(25.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await launchURL(
-                                  'https://manu.gl/wp-content/uploads/2022/10/MANU-Information-til-foraeldre-om-Hash.pdf');
+                              await downloadFile(
+                                filename:
+                                    'MANU-Information-til-foraeldre-om-Hash.pdf',
+                                url:
+                                    'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/MANU-Information-til-foraeldre-om-Hash.pdf?alt=media&token=dfc26ec2-09ad-447f-b6fc-e7e490dcb637',
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'hylr4xyd' /* Download PDF */,

@@ -152,7 +152,7 @@ class _ManuminastarteriskoleBogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'f92r20qq' /* Børnebøger */,
+                                      'f92r20qq' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -183,7 +183,7 @@ class _ManuminastarteriskoleBogWidgetState
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '4zwvykww' /* Manumina starter i skole */,
+                                      '4zwvykww' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -269,8 +269,12 @@ class _ManuminastarteriskoleBogWidgetState
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/MANU-5-6-ar-Manumina-atualerpoq_starter-i-skole-Bog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'MANU-5-6-ar-Manumina-atualerpoq_starter-i-skole-Bog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FMANU-5-6-ar-Manumina-atualerpoq_starter-i-skole-Bog.pdf?alt=media&token=607cb4cc-99bb-4007-98fe-ddfb5862cc70',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'uhzl9ioj' /* Download PDF */,

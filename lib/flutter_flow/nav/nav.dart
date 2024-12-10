@@ -287,11 +287,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const F09Widget(),
         ),
         FFRoute(
-          name: 'F1-2',
-          path: '/f12',
-          builder: (context, params) => const F12Widget(),
-        ),
-        FFRoute(
           name: 'F3-4',
           path: '/f34',
           builder: (context, params) => const F34Widget(),
@@ -320,6 +315,152 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'F-Foreldremodet',
           path: '/fForeldremodet',
           builder: (context, params) => const FForeldremodetWidget(),
+        ),
+        FFRoute(
+          name: 'Frundervisningen',
+          path: '/frundervisningen',
+          builder: (context, params) => const FrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'Tilundervisningen',
+          path: '/tilundervisningen',
+          builder: (context, params) => const TilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'Powerpoints',
+          path: '/powerpoints',
+          builder: (context, params) => const PowerpointsWidget(),
+        ),
+        FFRoute(
+          name: 'Plakatlogopostkortmm',
+          path: '/plakatlogopostkortmm',
+          builder: (context, params) => const PlakatlogopostkortmmWidget(),
+        ),
+        FFRoute(
+          name: 'F1-2',
+          path: '/f12',
+          builder: (context, params) => const F12Widget(),
+        ),
+        FFRoute(
+          name: 'F1-2_Powerpoints',
+          path: '/f12Powerpoints',
+          builder: (context, params) => const F12PowerpointsWidget(),
+        ),
+        FFRoute(
+          name: 'F1-2_Frundervisningen',
+          path: '/f12Frundervisningen',
+          builder: (context, params) => const F12FrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F1-2_Tilundervisningen',
+          path: '/f12Tilundervisningen',
+          builder: (context, params) => const F12TilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F3-4_Frundervisningen',
+          path: '/f34Frundervisningen',
+          builder: (context, params) => const F34FrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F3-4_Powerpoints',
+          path: '/f34Powerpoints',
+          builder: (context, params) => const F34PowerpointsWidget(),
+        ),
+        FFRoute(
+          name: 'F3-4_Tilundervisningen',
+          path: '/f34Tilundervisningen',
+          builder: (context, params) => const F34TilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F3-4_Plakatlogopostkortmm',
+          path: '/f34Plakatlogopostkortmm',
+          builder: (context, params) => const F34PlakatlogopostkortmmWidget(),
+        ),
+        FFRoute(
+          name: 'F5-6_Tilundervisningen',
+          path: '/f56Tilundervisningen',
+          builder: (context, params) => const F56TilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F5-6_Materialer',
+          path: '/f56Materialer',
+          builder: (context, params) => const F56MaterialerWidget(),
+        ),
+        FFRoute(
+          name: 'F_Alkohol_Frundervisningen',
+          path: '/fAlkoholFrundervisningen',
+          builder: (context, params) => const FAlkoholFrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_alkohol_Tilundervisningen',
+          path: '/fAlkoholTilundervisningen',
+          builder: (context, params) => const FAlkoholTilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Alkohol_haefter',
+          path: '/fAlkoholHaefter',
+          builder: (context, params) => const FAlkoholHaefterWidget(),
+        ),
+        FFRoute(
+          name: 'F_Foreldremodet_Frundervisningen',
+          path: '/fForeldremodetFrundervisningen',
+          builder: (context, params) => const FForeldremodetFrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Foreldremodet_Tilundervisningen',
+          path: '/fForeldremodetTilundervisningen',
+          builder: (context, params) => const FForeldremodetTilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Foreldremodet_Powerpoints',
+          path: '/fForeldremodetPowerpoints',
+          builder: (context, params) => const FForeldremodetPowerpointsWidget(),
+        ),
+        FFRoute(
+          name: 'F_Foreldremodet_Plakatlogopostkortmm',
+          path: '/fForeldremodetPlakatlogopostkortmm',
+          builder: (context, params) =>
+              const FForeldremodetPlakatlogopostkortmmWidget(),
+        ),
+        FFRoute(
+          name: 'F_Hash_Frundervisningen',
+          path: '/fHashFrundervisningen',
+          builder: (context, params) => const FHashFrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Hash_Tilundervisningen',
+          path: '/fHashTilundervisningen',
+          builder: (context, params) => const FHashTilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Hash_Materialer',
+          path: '/fHashMaterialer',
+          builder: (context, params) => const FHashMaterialerWidget(),
+        ),
+        FFRoute(
+          name: 'F_Instruktor_Frundervisningen',
+          path: '/fInstruktorFrundervisningen',
+          builder: (context, params) => const FInstruktorFrundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Instruktor_Tilundervisningen',
+          path: '/fInstruktorTilundervisningen',
+          builder: (context, params) => const FInstruktorTilundervisningenWidget(),
+        ),
+        FFRoute(
+          name: 'F_Instruktor_Powerpoints',
+          path: '/fInstruktorPowerpoints',
+          builder: (context, params) => const FInstruktorPowerpointsWidget(),
+        ),
+        FFRoute(
+          name: 'F_Instruktor_Ekstramateriale',
+          path: '/fInstruktorEkstramateriale',
+          builder: (context, params) => const FInstruktorEkstramaterialeWidget(),
+        ),
+        FFRoute(
+          name: 'Nyheder',
+          path: '/Nyheder',
+          builder: (context, params) => const NyhederWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

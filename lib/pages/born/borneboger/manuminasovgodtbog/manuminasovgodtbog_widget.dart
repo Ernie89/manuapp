@@ -151,7 +151,7 @@ class _ManuminasovgodtbogWidgetState extends State<ManuminasovgodtbogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'wc5u0dpd' /* Børnebøger */,
+                                      'wc5u0dpd' /* Børn */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -182,7 +182,7 @@ class _ManuminasovgodtbogWidgetState extends State<ManuminasovgodtbogWidget> {
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'z27cqtkm' /* Manumina sov godt */,
+                                      'z27cqtkm' /* Børnebøger */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -246,7 +246,7 @@ class _ManuminasovgodtbogWidgetState extends State<ManuminasovgodtbogWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'utfelbiq' /* Manumina sov godt (bog) */,
+                                  'utfelbiq' /* Manumina sinilluarit (bog) */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -268,8 +268,12 @@ class _ManuminasovgodtbogWidgetState extends State<ManuminasovgodtbogWidget> {
                                   padding: const EdgeInsets.all(25.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await launchURL(
-                                          'https://manu.gl/wp-content/uploads/2022/10/Manumina-sinilluarit_sov-godt-Bog.pdf');
+                                      await downloadFile(
+                                        filename:
+                                            'Manumina-sinilluarit_sov-godt-Bog.pdf',
+                                        url:
+                                            'https://firebasestorage.googleapis.com/v0/b/manu-projekt-rev2-v1sb4h.firebasestorage.app/o/Animationsvideoer%2FB%C3%B8rn%2FB%C3%B8rneb%C3%B8ger%2FManumina-sinilluarit_sov-godt-Bog.pdf?alt=media&token=4c46d41e-0b30-48fa-91b1-919cd7b7b899',
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'r06rudxt' /* Download PDF */,
